@@ -4,9 +4,8 @@
     {
         public string Name { get; private set; }
         public Colour Colour { get; private set; }
-        public Title() { }
 
-        public Title(string name, Colour colour)
+        public Title(string name, Colour colour = Colour.White)
         {
             Name = name;
             Colour = colour;

@@ -4,8 +4,10 @@ namespace Projects.Domain.Project
 {
     public class Project : BaseEntity
     {
-        public Project(int id) : base(id)
+        public Title Name { get; set; }
+        public Project(int id, Title title) : base(id)
         {
+            Name = title;
         }
     }
 }
