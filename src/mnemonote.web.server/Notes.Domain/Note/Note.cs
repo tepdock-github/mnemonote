@@ -4,11 +4,12 @@ namespace Notes.Domain.Note
 {
     public sealed class Note : BaseEntity
     {
-        public Note(Title title, int id) : base(id)
+        public Title Name { get; set; }
+        public string Content { get; set; }
+        public Note(Title title, string content, int id) : base(id)
         {
-            Title = title;
+            Name = title;
+            Content = content;
         }
-
-        public Title Title { get; set; }
     }
 }
