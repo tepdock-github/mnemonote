@@ -1,14 +1,14 @@
-﻿namespace Models
+﻿namespace Models.Entities
 {
     public abstract class BaseEntity
     {
         public int Id { get; private init; }
-        protected BaseEntity(int id) 
+        protected BaseEntity(int id)
         {
             Id = id;
         }
 
-        public static bool operator==(BaseEntity? left, BaseEntity? right) =>
+        public static bool operator ==(BaseEntity? left, BaseEntity? right) =>
             left is not null && right is not null && left.Equals(right);
 
         public static bool operator !=(BaseEntity? left, BaseEntity? right) =>
