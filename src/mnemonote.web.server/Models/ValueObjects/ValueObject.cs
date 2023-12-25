@@ -16,7 +16,9 @@
 
             var other = (ValueObject)obj;
 
-            return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
+            var otherEqualityComponents = other.GetEqualityComponents();
+            return GetEqualityComponents()
+                .SequenceEqual(otherEqualityComponents);
         }
 
         public override int GetHashCode() =>
