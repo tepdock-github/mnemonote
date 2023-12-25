@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Models.Entities;
+using Models.ValueObjects;
 
 namespace Tasks.Domain.Task
 {

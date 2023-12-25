@@ -1,4 +1,4 @@
-﻿using Models;
+﻿using Models.Entities;
 
 namespace Notes.Domain.Template
 {
@@ -6,12 +6,10 @@ namespace Notes.Domain.Template
     {
         public string Name { get; set; }
         public Type Type { get; set; }
-        public int? ProjectId { get; set; }
-        public Template (Type type, string name, int id, int? projectId) : base(id)
+        public Template (Type type, string name, int id) : base(id)
         {
             Type = type;
             Name = name;
-            ProjectId = projectId;
         }
     }
 }

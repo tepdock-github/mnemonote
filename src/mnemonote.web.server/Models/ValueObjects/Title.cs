@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models.Enums;
+
+namespace Models.ValueObjects
 {
     public class Title : ValueObject
     {

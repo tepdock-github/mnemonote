@@ -1,4 +1,4 @@
-﻿namespace Models
+﻿namespace Models.ValueObjects
 {
     public abstract class ValueObject
     {
@@ -16,7 +16,9 @@
 
             var other = (ValueObject)obj;
 
-            return this.GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
+            var otherEqualityComponents = other.GetEqualityComponents();
+            return GetEqualityComponents()
+                .SequenceEqual(otherEqualityComponents);
         }
 
         public override int GetHashCode() =>

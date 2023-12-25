@@ -1,8 +1,9 @@
-﻿using Models;
+﻿using Models.Entities;
+using Models.ValueObjects;
 
 namespace Notes.Domain.Note
 {
-    public sealed class Note : BaseEntity
+    public class Note : BaseEntity
     {
         public Title Name { get; set; }
         public string Content { get; set; }
