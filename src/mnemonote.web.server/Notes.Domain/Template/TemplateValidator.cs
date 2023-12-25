@@ -4,20 +4,14 @@ namespace Notes.Domain.Template
 {
     public class TemplateValidator<T> where T : Template
     {
-        public ValidationNotifier<Template> Validate(Template? template)
+        public Validator<Template> PopulateValidator(Template? template)
         {
-            var notifier = new ValidationNotifier<Template>();
+            var templateValidator = new Validator<Template>()
+                .AddErrorIfTrue(template is null, "Object for template wasn't created")
+                .AddErrorIfTrue(template?.Type is null, "Type for template wasn't set")
+                .AddErrorIfTrue(string.IsNullOrEmpty(template?.Name), "Name for template wasn't set");
 
-            if (template is null)
-                notifier.AddError("Object for template wasn't created");
-
-            if (template?.Type is null)
-                notifier.AddError("Type for template wasn't set");
-
-            if (string.IsNullOrEmpty(template?.Name))
-                notifier.AddError("Name for template wasn't set");
-
-            return notifier;
+            return templateValidator;
         }
     }
 }

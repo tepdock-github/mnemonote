@@ -2,19 +2,15 @@
 
 namespace Notes.Domain.Note
 {
-    public class NoteValidator<T> where T : Note
+    public class NoteValidator
     {
-        public ValidationNotifier<Note> Validate(Note? note)
+        public Validator<Note> PopulateValidator(Note? note)
         {
-            var notifier = new ValidationNotifier<Note>();
+            var noteValidator = new Validator<Note>()
+                .AddErrorIfTrue(note is null, "Object for note wasn't created")
+                .AddErrorIfTrue(note?.Name is null, "Title for note wasn't set");
 
-            if (note is null)
-                notifier.AddError("Object for note wasn't created");
-
-            if (note?.Name is null)
-                notifier.AddError("Title for note wasn't set");
-
-            return notifier;
+            return noteValidator;
         }
     }
 }

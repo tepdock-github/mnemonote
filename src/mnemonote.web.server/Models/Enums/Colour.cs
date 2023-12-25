@@ -2,7 +2,8 @@
 {
     public enum Colour
     {
-        White = 0,
-        Black = 1,
+        None = 0,
+        White = 1,
+        Black = 2,
     }
 }
